@@ -14,6 +14,14 @@ You can go to /host to send a sequence of colours and tempo to flash at
 5. The clients work out the offset between their time and the server time. The network lag is factored in to make a more accurate measure of the server time using NTP. NTP is approximate and so pefect synchronisation cannot be guaranteed or expected.
 6. Clients timeout until the start time set by the server and then at an interval, update their background-color to fit the next colour in the sequence.
 
+## Setup
+
+1. Install Node.js
+2. In the directory run ```npm run install```
+3. In the directory run ```node server.js```
+4. Go to the address of the server to connect as a flashing device
+5. Go to the address of the server and then /host to send out the sequences and tempo
+
 ### Notes
 This project was made for a small youth group gathering of about 80 people. It worked well and I didn't have any issues. The youth could connect their phones, but what I found worked best was having devices with large screens scattered around the room pointing inwards. Everything worked as planned.
 
