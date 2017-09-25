@@ -11,7 +11,7 @@ let nextBeginTimeInterval;
 let sequenceLength;
 let currentData = null;
 
-let path=require("path") //assuming express is installed 
+let path=require("path") //assuming express is installed
 
 app.use(express.static('public'))
 
@@ -27,12 +27,14 @@ var server = require('http').createServer(app);
 
 var io = require('socket.io')(server);
 
-function syncWaitTime() { 
+function syncWaitTime() {
     console.log("Syncing Wait Time");
     sequenceLength = currentData.nextDuration * currentData.nextColors.length;
     let waitTime = 0;
     var whileLoopCounter = 0;
-    //I don't remember why it must wait at least a sequence, but surely it was important. Is it so it is in time with the server?
+    //It works with a waitTime measured by sequence lengths so that if the /host has a perfect connection, the sequence starts in time
+    //with when they hit 'update'. It's so they can hit 'update' on the beat and the server will respect that and send out the sequence to the
+    //Clients on another beat
     while (waitTime < MIN_WAIT_TIME){ //So that it is at least 1 second of waiting and also at least a sequence
         waitTime += sequenceLength;
         whileLoopCounter++;
@@ -77,7 +79,7 @@ io.on('connection', function(socket) {
             socket.emit("newData", currentData);
         }
     })
-    socket.on("syncWaitTime", function () { 
+    socket.on("syncWaitTime", function () {
         console.log("Client called for resyncing time. Client will reload automatically");
         syncWaitTime();
     })
