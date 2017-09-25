@@ -1,0 +1,35 @@
+.jscolor {
+    height: 60px;
+    margin-bottom: 15px;
+    font-size: 0px;
+    cursor:pointer;
+}
+
+input[type="checkbox"]{
+    cursor: pointer;
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: #FFF;
+    border-radius: 4px;
+    box-sizing: border-box;
+    position: relative;
+    box-sizing: content-box ;
+    width: 30px;
+    height: 30px;
+    border: solid 1px;
+    transition: all .1s linear;
+}
+
+input[type="checkbox"]:checked{
+  background-color: #337ab7;
+}
+
+input[type="checkbox"]:focus{
+  outline: 0 none;
+  box-shadow: none;
+}
+
+.checkbox-text{
+    line-height: 40px;
+    vertical-align: top;
+}

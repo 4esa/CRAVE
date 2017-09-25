@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>CRAVE</title>
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">    
+    <meta name="description" content="synchronised crave lighting">
+    <meta name="author" content="Scott Angelinetta">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/host.css">
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="js/jscolor.min.js"></script>
+    <script src="js/tap-tempo.js"></script>
+    <script src="js/host.js"></script>
+</head>
+
+<body>
+    <div autoFocus class="container-fluid">
+        <form onsubmit="return sendData(this)">
+            <div class="form-group">
+                <input type="checkbox" name="color1on" onchange="setLabelColorValue(this)" id="color1on" checked>
+                <label class="color-text" for="color1on">On</label>
+                <input type="text" value="000" name="color1" class="form-control jscolor" id="color1">
+            </div>
+            <div class="form-group">
+                <input type="checkbox" name="color2on" id="color2on" onchange="setLabelColorValue(this)" checked>
+                <label class="color-text" for="color2on">On</label>
+                <input type="text" value="fff" name="color2" class="form-control jscolor" id="color2">
+            </div>
+            <div class="form-group">
+                <input type="checkbox" name="color3on" onchange="setLabelColorValue(this)" id="color3on">
+                <label class="color-text" for="color3on">Off</label>
+                <input type="text" value="AAA" name="color3" class="form-control jscolor" id="color3">
+            </div>
+            <div class="form-group">
+                <input type="checkbox" name="color4on" onchange="setLabelColorValue(this)" id="color4on">
+                <label class="color-text" for="color4on">Off</label>
+                <input type="text" value="333" name="color4"  class="form-control jscolor" id="color4">
+            </div>
+            <div class="form-group">
+                <div class="radio-inline">
+                  <label><input type="radio" value="0.5" checked name="multiplier">0.5x</label>
+                </div>
+                <div class="radio-inline">
+                  <label><input type="radio" value="1" checked name="multiplier">1x</label>
+                </div>
+                <div class="radio-inline">
+                  <label><input type="radio" value="2" name="multiplier">2x</label>
+                </div>
+                <div class="radio-inline">
+                  <label><input type="radio" value="4" name="multiplier">4x</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="tempoInput">Tempo - Tap any key to set</label>
+                <br>
+                <input required name="tempoInput" id="tempoInput" value="120.0" step="any" type="number">
+                <span> (Last 8 values taken)</span>
+            </div>
+            <div class="form-group">
+                <span><strong>Fade</strong></span>
+                <br>
+                <input type="checkbox" name="fade" onchange="setLabelColorValue(this)" id="fade">
+                <label class="color-text" for="fade">Off</label>
+            </div>
+            <br>
+            <input class="btn btn-primary btn-lg btn-block" type="submit" value="Update">
+        </form>
+    </div>
+</body>
+
+</html>
