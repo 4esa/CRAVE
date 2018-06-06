@@ -1,10 +1,3 @@
-.jscolor {
-    height: 60px;
-    margin-bottom: 15px;
-    font-size: 0px;
-    cursor:pointer;
-}
-
 input[type="checkbox"]{
     cursor: pointer;
     -webkit-appearance: none;
@@ -32,4 +25,29 @@ input[type="checkbox"]:focus{
 .checkbox-text{
     line-height: 40px;
     vertical-align: top;
+}
+
+.picker {
+    height: 60px;
+    font-size: 0px;
+    cursor:pointer;
+}
+
+.picker-group{
+    display: flex;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+
+.preview-table{
+    height: 60px;
+    width: 60px;
+}
+
+.preview-table td{
+    border: 1px lightgrey solid;
+}
+
+.preview-table .active{
+    background-color: #337ab7;
 }

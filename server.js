@@ -1,12 +1,9 @@
-// @flow
-
 let express = require('express');
 let app = express();
 let ntp = require('socket-ntp-krcmod');
 
 let MIN_WAIT_TIME = 1000; //New sequence will begin after 1000 initial push out of change
-//It might take a while to get so many devices to get the message, so they will all try to begin on a specific millisecond
-let nextBeginTime = 0;
+
 let nextBeginTimeInterval;
 let sequenceLength;
 let currentData = null;
@@ -27,6 +24,8 @@ var server = require('http').createServer(app);
 
 var io = require('socket.io')(server);
 
+//This function sync the time to start so that it falls on a beat and is longer than the minimum wait time
+//It also continually increments the start time so that clients can join midway through
 function syncWaitTime() {
     console.log("Syncing Wait Time");
     sequenceLength = currentData.nextDuration * currentData.nextColors.length;

@@ -19,28 +19,30 @@
 
 <body>
     <div autoFocus class="container-fluid">
-        <form onsubmit="return sendData(this)">
+        <form onsubmit="return sendData(this)" id="form">
             <div class="form-group">
-                <input type="checkbox" name="color1on" onchange="setLabelColorValue(this)" id="color1on" checked>
-                <label class="color-text" for="color1on">On</label>
-                <input type="text" value="000" name="color1" class="form-control jscolor" id="color1">
+                <input type="checkbox" onchange="changeAnimate(this)" name="animate" id="animate">
+                <label class="color-text" for="animate">Animate</label>
+            </div>
+            <div class="form-group" id="frame-group">
+                <label for="frameCount">Frames</label>
+                <input type="number" name="frameCount" min="1" value="2" oninput="updatePickers(this)" id="frameCount">
             </div>
             <div class="form-group">
-                <input type="checkbox" name="color2on" id="color2on" onchange="setLabelColorValue(this)" checked>
-                <label class="color-text" for="color2on">On</label>
-                <input type="text" value="fff" name="color2" class="form-control jscolor" id="color2">
+                <label for="rowCount">Rows</label>
+                <input type="number" name="rowCount" min="1" value="1" oninput="updatePickers(this)" id="rowCount">
             </div>
             <div class="form-group">
-                <input type="checkbox" name="color3on" onchange="setLabelColorValue(this)" id="color3on">
-                <label class="color-text" for="color3on">Off</label>
-                <input type="text" value="AAA" name="color3" class="form-control jscolor" id="color3">
+                <label for="columnCount">Columns</label>
+                <input type="number" name="columnCount" min="1" value="1" oninput="updatePickers(this)" id="columnCount">
             </div>
+            <span id="pickers-container">
+
+            </span>
             <div class="form-group">
-                <input type="checkbox" name="color4on" onchange="setLabelColorValue(this)" id="color4on">
-                <label class="color-text" for="color4on">Off</label>
-                <input type="text" value="333" name="color4"  class="form-control jscolor" id="color4">
-            </div>
-            <div class="form-group">
+                <div class="radio-inline">
+                    <label><input type="radio" value="0.25" checked name="multiplier">0.25x</label>
+                </div>
                 <div class="radio-inline">
                   <label><input type="radio" value="0.5" checked name="multiplier">0.5x</label>
                 </div>
@@ -53,6 +55,9 @@
                 <div class="radio-inline">
                   <label><input type="radio" value="4" name="multiplier">4x</label>
                 </div>
+                <div class="radio-inline">
+                    <label><input type="radio" value="8" name="multiplier">8x</label>
+                </div>
             </div>
             <div class="form-group">
                 <label for="tempoInput">Tempo - Tap any key to set</label>
@@ -63,7 +68,7 @@
             <div class="form-group">
                 <span><strong>Fade</strong></span>
                 <br>
-                <input type="checkbox" name="fade" onchange="setLabelColorValue(this)" id="fade">
+                <input type="checkbox" name="fade" onchange="setLabelToggle(this, 'On', 'Off')" id="fade">
                 <label class="color-text" for="fade">Off</label>
             </div>
             <br>
