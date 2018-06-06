@@ -1,5 +1,9 @@
 # CRAVE
-I created this project for a dance party at my youth group. I had about 20 devices all flash the same sequence of colours at the same time. They simply had to go to the address of the node.js server and then once colours were sent, they would all flash in time.
+I created this project for a dance party at my youth group. I had about 20 devices all flash the same sequence of colours at the same time. They simply had to go to the IP address of the node.js server and then once the colours were sent, they would all flash in time.
+
+![Demonstration 1](gifs/color-grid.gif "Demonstration of color table")
+![Demonstration 2](gifs/columns.gif "Demonstration of columns")
+![Demonstration 3](gifs/full.gif "Demonstration with full lightshow")
 
 ## /host
 You can go to /host to send a sequence of colours and tempo to flash at
