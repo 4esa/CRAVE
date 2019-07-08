@@ -21,7 +21,7 @@ You can go to /host to send a sequence of colours and tempo to flash at
 ## Setup
 
 1. Install Node.js
-2. In the directory run ```npm run install```
+2. In the directory run ```npm install```
 3. In the directory run ```node server.js```
 4. Go to the address of the server to connect as a flashing device
 5. Go to the address of the server and then /host to send out the sequences and tempo
@@ -30,7 +30,3 @@ You can go to /host to send a sequence of colours and tempo to flash at
 This project was made for a small youth group gathering of about 80 people. It worked well and I didn't have any issues. The youth could connect their phones, but what I found worked best was having devices with large screens scattered around the room pointing inwards. Everything worked as planned.
 
 This project is could be optimised in a few ways. For example, the network lag between the /host and the node server has not been accounted for. However the network lag between the clients and the server has been.
-
-
-
-
