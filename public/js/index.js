@@ -122,17 +122,15 @@ function setData(data) {
 
 }
 
-function randomColor() {
-  // returns a random hex color
-  return "#" + Math.floor(Math.random() * parseInt("FFFFFF", 16)).toString(16)
+function updateFeedbackColor() {
+  feedbackText.style.color = "rgb("
+    + Math.floor(Math.random() * 255)
+    + ","
+    + Math.floor(Math.random() * 255)
+    + ","
+    + Math.floor(Math.random() * 255)
+    + ")";
 }
-
-function makeUpdateFeedbackColor(f) {
-  return ()=>(feedbackText.style.color = f())
-}
-
-let updateFeedbackColor = makeUpdateFeedbackColor(()=>"#AAAAAA")
-// let updateFeedbackColor = makeUpdateFeedbackColor(randomColor)
 
 window.onload = function () {
   tryConnect();
