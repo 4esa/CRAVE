@@ -29,4 +29,4 @@ You can go to /host to send a sequence of colours and tempo to flash at
 ### Notes
 This project was made for a small youth group gathering of about 80 people. It worked well and I didn't have any issues. The youth could connect their phones, but what I found worked best was having devices with large screens scattered around the room pointing inwards. Everything worked as planned.
 
-This project is could be optimised in a few ways. For example, the network lag between the /host and the node server has not been accounted for. However the network lag between the clients and the server has been.
+This project could be optimised in a few ways. For example, the network lag between the /host and the node server has not been accounted for. However the network lag between the clients and the server has been.
